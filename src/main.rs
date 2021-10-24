@@ -93,8 +93,8 @@ fn main() -> Result<()> {
 			model.text.push_str("TRIGGER ");
 		}
 
-		let [r, g, b] = model.color;
-		engine.gfx.render_state().set_clear_color(Color::rgb(r, g, b));
+		let clear_color = Color::from(model.color).to_linear();
+		engine.gfx.render_state().set_clear_color(clear_color);
 		engine.gfx.render_state().clear(gfx::ClearMode::COLOR | gfx::ClearMode::DEPTH);
 
 		engine.end_frame();

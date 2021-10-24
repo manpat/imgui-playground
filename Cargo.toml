@@ -8,3 +8,7 @@ edition = "2021"
 [dependencies]
 toybox = { path = "toybox-rs" }
 
+
+[patch."https://github.com/manpat/common-rs.git"]
+common = { path = "common-rs" }
+
